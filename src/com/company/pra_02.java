@@ -6,14 +6,19 @@ public class pra_02 {
 
     public static void main(String[] args) {
 
-//        int[][] a = new int[5][5];
-        int[][] a = new int[4][5];
+        int[][] a = new int[5][5];
+//        int[][] a = new int[4][5];
         fillMat(a);
         printMat(a);
-//        System.out.println(q1(a));
-//        System.out.println(q2(a));
+        System.out.println(q1(a));
+        System.out.println(q2(a));
         q3(a);
-
+        System.out.println(q4(a) ? "isSymmetric" : "isnSymmetric");
+        System.out.println(q5(a));
+        System.out.println(q6(a));
+        System.out.println(q7(a));
+        System.out.println(q8(a));
+        System.out.println(q9(a));
     }
 
     //O(n)
@@ -36,7 +41,7 @@ public class pra_02 {
         return sum;
     }
 
-    //O(n^2)
+    //O(n*m) Assuming the number of rows is m and the number of columns is n
     public static void q3(int[][] a) {
         int sum = 0;
         int row = 0;
@@ -49,6 +54,78 @@ public class pra_02 {
             sum = 0;
             row++;
         }
+    }
+
+    //O(n^2) Assuming the matrix is square
+    public static boolean q4(int[][] a) {
+        boolean isSymmetric = true;
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                if (a[i][j] != a[j][i]){
+                    isSymmetric = !isSymmetric;
+                    break;
+                }
+        return isSymmetric;
+    }
+
+    public static int q5(int[][] a) {
+        int sum = 0;
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                if (i < j)
+                    sum += a[i][j];
+            }
+
+        return sum;
+    }
+
+    public static int q6(int[][] a) {
+        int sum = 0;
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                if (i + j < n - 1)
+                    sum += a[i][j];
+            }
+
+        return sum;
+    }
+
+    public static int q7(int[][] a) {
+        int sum = 0;
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                if (i > j)
+                    sum += a[i][j];
+            }
+
+        return sum;
+    }
+
+    public static int q8(int[][] a) {
+        int sum = 0;
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                if (i + j > n - 1)
+                    sum += a[i][j];
+            }
+
+        return sum;
+    }
+
+    public static int q9(int[][] a) {
+        int sum = 0;
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++) {
+                if (i >= j)
+                    sum += a[i][j];
+            }
+        return sum;
     }
 
     public static void fillMat(int[][] a) {
