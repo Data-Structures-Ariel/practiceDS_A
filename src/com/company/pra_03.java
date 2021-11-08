@@ -6,12 +6,13 @@ import java.util.Arrays;
 public class pra_03 {
 
 
-    private static void mergeSort(int[] arr) {
+    public static void mergeSort(int[] arr) {
+
         mergeSort(arr, 0, arr.length - 1);
     }
 
     //O(logn)
-    static void mergeSort(int[] arr, int l, int r) {
+    private static void mergeSort(int[] arr, int l, int r) {
         if (l < r) {
             int middle = l + (r - l) / 2;
             mergeSort(arr, l, middle);
