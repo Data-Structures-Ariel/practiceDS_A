@@ -63,11 +63,11 @@ public class pra_03 {
         }
     }
 
-    // O(n)
+    // O(n+m)
     public static int[] merge(int[] a, int[] b) {
         int[] c = new int[a.length + b.length];
         int i = 0, j = 0, k = 0;
-        while (i < a.length && j < b.length)
+        while (i < a.length && j < b.length)//b=10 , a=8
             if (a[i] < b[j])
                 c[k++] = a[i++];
             else
