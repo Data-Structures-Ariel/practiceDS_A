@@ -1,5 +1,4 @@
 package com.company;
-
 public class pra_04 {
     public static void main(String[] args) {
         int[] a = {20, 5, 7, 3, 2, 7, 9, 12, 357, 24, 68};
@@ -80,8 +79,6 @@ public class pra_04 {
         num = (int) ((num % 10) * (Math.pow(10, (int) Math.log10(num)))) + numRev(num / 10);
         return num;
     }
-
-
     static void DrawT(int n) {
         if (n == 1) {
             System.out.println("*");
@@ -92,5 +89,4 @@ public class pra_04 {
             System.out.printf("*");
         System.out.println("");
     }
-
 }
