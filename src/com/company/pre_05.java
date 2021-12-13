@@ -3,7 +3,6 @@ package com.company;
 public class pre_05 {
 
     public static void main(String[] args) {
-
         LinkedList list = new LinkedList();
         for (int i = 0; i < 10; i++) {
             list.add(i);
@@ -32,17 +31,19 @@ class LinkedList implements List {
         this.size = 0;
     }
 
+
     @Override
     public void add(int d) {
         if (this.head == null)
-            this.head = new Node(d, size++);
+            this.head = new Node(d, size);
         else {
-            Node new_node = new Node(d, size++);
+            Node new_node = new Node(d, size);
             Node temp_head = this.head;
             while (temp_head.next != null)
                 temp_head = temp_head.next;
             temp_head.next = new_node;
         }
+        size++;
     }
 
     @Override
@@ -119,6 +120,7 @@ class LinkedList implements List {
 }
 
 class Node {
+
     int data;
     Node next;
     int index;
