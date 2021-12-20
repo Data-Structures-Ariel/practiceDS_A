@@ -1,6 +1,4 @@
-package com.company;
-
-public class pre_05 {
+class pre_05 {
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();

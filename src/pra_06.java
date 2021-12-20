@@ -1,10 +1,8 @@
-package com.company;
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class pre_06 {
+ class pre_06 {
     public static void main(String[] args) {
         Stack st = new Stack();
         Queue qu = new LinkedList();

@@ -1,4 +1,3 @@
-package com.company;
 public class pra_04 {
     public static void main(String[] args) {
         int[] a = {20, 5, 7, 3, 2, 7, 9, 12, 357, 24, 68};
