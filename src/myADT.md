@@ -6,11 +6,6 @@ Write a myADT data structure that stores the numbers.
 The structure will support the function:
 
 ```java
-int add(int k)
-```
-* Adds a new value to a structure that meets the conditions
-
-```java
 int howManyMore(int k)
 ```
 
