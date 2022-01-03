@@ -11,7 +11,6 @@ public class pra_09 {
         boolean check = checkQueue_N(q);
         System.out.println("is Queue_N " + check);
 
-
         LinkedList<Integer> list = new LinkedList();
         LinkedList<Integer> list2 = new LinkedList();
         list.add(1);
@@ -23,7 +22,6 @@ public class pra_09 {
         System.out.println(list);
         check = foo(list);
         System.out.println(check);
-
 
         list2.addFirst(2);
         lastElement = 0;
@@ -83,3 +81,6 @@ public class pra_09 {
         return true;
     }
 }
+//https://apps.moital.gov.il/WebServicesHandlers/Mahat/Rsrc/MahatTests/97105412021.pdf
+//Q8
+
