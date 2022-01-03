@@ -56,7 +56,7 @@ public class pra_09 {
         return true;
     }
 
-    //O()
+    //O(n)
     public static boolean foo(LinkedList<Integer> list) {
         LinkedList<Integer> tempList = new LinkedList(list);
         int sumElement = 0;
@@ -70,7 +70,7 @@ public class pra_09 {
         return true;
     }
 
-    //O()
+    //O(n)
     public static boolean foo2(LinkedList<Integer> list) {
         LinkedList<Integer> tempList = new LinkedList(list);
         int sumElement = 0;
@@ -80,7 +80,6 @@ public class pra_09 {
                 return false;
 
         } while (tempList.size() - 1 != 0);
-
         return true;
     }
 }
