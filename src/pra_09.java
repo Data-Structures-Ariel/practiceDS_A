@@ -8,12 +8,13 @@ public class pra_09 {
         Queue<Integer> q = createQueue_N(4);
         System.out.println(q);
 
-        boolean check = checkQueue_N(q);
+        boolean check = checkQueue_N(q,4);
         System.out.println("is Queue_N " + check);
 
         LinkedList<Integer> list = new LinkedList();
         LinkedList<Integer> list2 = new LinkedList();
         list.add(1);
+
         int lastElement = 0;
         for (int i = 0; i < 6; i++) {
             lastElement += list.getLast();
@@ -40,17 +41,26 @@ public class pra_09 {
         for (int i = 1; i <= n; i++)
             for (int j = 0; j < i; j++)
                 q.add(i);
+
+        //i=1 | --> 1
+        //i=2 | --> 2
+        // ..
+        //i=n | --> n
+        //1+2+3+4+...+n = n(n+1)/2 = 0.5*n^2 +0.5n
+
         return q;
 
     }
 
-    //O()
-    public static boolean checkQueue_N(Queue<Integer> q) {
+    //O(n^2)
+    public static boolean checkQueue_N(Queue<Integer> q, int n) {
 
-        for (int i = 1; !q.isEmpty(); i++)
-            for (int j = 0; j < i && !q.isEmpty(); j++)
-                if (q.poll() != i)
+        Queue<Integer> temp_q = new LinkedList(q);
+        for (int i = 1; !temp_q.isEmpty(); i++)
+            for (int j = 0; j < i && !temp_q.isEmpty(); j++)
+                if (temp_q.poll() != i)
                     return false;
+
         return true;
     }
 
