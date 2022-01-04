@@ -5,10 +5,15 @@ public class pra_09 {
 
 
     public static void main(String[] args) {
+
+        Node1 head = new Node1(1);
+        head.next = new Node1(1);
+        head.next.next = new Node1(2);
+
         Queue<Integer> q = createQueue_N(4);
         System.out.println(q);
 
-        boolean check = checkQueue_N(q,4);
+        boolean check = checkQueue_N(q, 4);
         System.out.println("is Queue_N " + check);
 
         LinkedList<Integer> list = new LinkedList();
@@ -90,7 +95,28 @@ public class pra_09 {
         } while (tempList.size() - 1 != 0);
         return true;
     }
+
+    //O(n)
+    public static boolean foo3(Node1 list) {
+        if(list ==null)
+            return true;
+        Node1 temp = list;
+        int sum = 0;
+        while (temp != null) {
+
+        }
+    return true;
+    }
 }
 //https://apps.moital.gov.il/WebServicesHandlers/Mahat/Rsrc/MahatTests/97105412021.pdf
 //Q8
 
+class Node1 {
+    int data;
+    Node1 next;
+
+    public Node1(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
