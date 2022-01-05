@@ -59,14 +59,19 @@ public class pra_09 {
 
     //O(n^2)
     public static boolean checkQueue_N(Queue<Integer> q, int n) {
-
+        System.out.println(q);
         Queue<Integer> temp_q = new LinkedList(q);
-        for (int i = 1; !temp_q.isEmpty(); i++)
+        int i = 1;
+        while (!temp_q.isEmpty()) {
             for (int j = 0; j < i && !temp_q.isEmpty(); j++)
                 if (temp_q.poll() != i)
                     return false;
-
-        return true;
+            if (i == n)
+                break;
+            if (!temp_q.isEmpty())
+                i++;
+        }
+        return temp_q.isEmpty() && i==n;
     }
 
     //O(n)
@@ -98,14 +103,14 @@ public class pra_09 {
 
     //O(n)
     public static boolean foo3(Node1 list) {
-        if(list ==null)
+        if (list == null)
             return true;
         Node1 temp = list;
         int sum = 0;
         while (temp != null) {
 
         }
-    return true;
+        return true;
     }
 }
 //https://apps.moital.gov.il/WebServicesHandlers/Mahat/Rsrc/MahatTests/97105412021.pdf
