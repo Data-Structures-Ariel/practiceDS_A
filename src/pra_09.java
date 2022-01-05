@@ -38,6 +38,24 @@ public class pra_09 {
         System.out.println(list2);
         check = foo2(list2);
         System.out.println(check);
+
+//        Node1 n = new Node1(1);
+//        n.next = new Node1(1);
+//        n.next.next = new Node1(2);
+//        n.next.next.next = new Node1(4);
+//        n.next.next.next.next = new Node1(8);
+//        n.next.next.next.next.next = new Node1(16);
+//        n.next.next.next.next.next.next = new Node1(32);
+
+        Node1 n = new Node1(1);
+        add(n, 1);
+        add(n, 2);
+        add(n, 4);
+        add(n, 8);
+        add(n, 16);
+        add(n, 32);
+        print(n);
+        System.out.println(foo3(n));
     }
 
     //O(n^2)
@@ -59,7 +77,7 @@ public class pra_09 {
 
     //O(n^2)
     public static boolean checkQueue_N(Queue<Integer> q, int n) {
-        System.out.println(q);
+
         Queue<Integer> temp_q = new LinkedList(q);
         int i = 1;
         while (!temp_q.isEmpty()) {
@@ -71,7 +89,7 @@ public class pra_09 {
             if (!temp_q.isEmpty())
                 i++;
         }
-        return temp_q.isEmpty() && i==n;
+        return temp_q.isEmpty() && i == n;
     }
 
     //O(n)
@@ -107,10 +125,32 @@ public class pra_09 {
             return true;
         Node1 temp = list;
         int sum = 0;
-        while (temp != null) {
-
+        while (temp.next != null) {
+            sum += temp.data;
+            if (sum != temp.next.data)
+                return false;
+            temp = temp.next;
         }
         return true;
+    }
+
+    public static void print(Node1 list) {
+        Node1 temp = list;
+        while (temp != null) {
+            System.out.printf("%d -> ", temp.data);
+            temp = temp.next;
+        }
+        System.out.printf("null\n");
+    }
+
+    public static void add(Node1 list, int key) {
+        if (list == null)
+            list = new Node1(key);
+        Node1 temp = list;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = new Node1(key);
     }
 }
 //https://apps.moital.gov.il/WebServicesHandlers/Mahat/Rsrc/MahatTests/97105412021.pdf
