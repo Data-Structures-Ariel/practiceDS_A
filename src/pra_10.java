@@ -32,6 +32,9 @@ public class pra_10 {
 
     //Solution by Shay Gali
     public static IntNode splitListToEvenAndOdd(IntNode first) {
+        if(first==null)
+            return null;
+        //1,1,1,1,1,1,2,46,7,8,9
         IntNode returnNode = null, temp = first;
         while (temp.next != null && returnNode == null) {
             if (temp.next.data % 2 != first.data % 2) {
@@ -41,7 +44,9 @@ public class pra_10 {
                 temp = temp.next;
         }
         IntNode tempForSecond = returnNode;
-
+        //
+        //temp -> 1 -> 1 -> 1 -> 1 -> 1 -> 1 -> 46 -> 7 -> 8 -> 9
+       //returnNode-> 2->null
         while (temp.next != null) {
             if (temp.next.data % 2 != first.data % 2) {
                 tempForSecond.next = new IntNode(temp.next.data);
@@ -51,6 +56,8 @@ public class pra_10 {
             } else
                 temp = temp.next;
         }
+        //temp -> 1 -> 1 -> 1 -> 1 -> 1 -> 1 ->  7  -> 9
+        //returnNode-> 2-> 46 -> 8 -> null
         return returnNode;
     }
 
