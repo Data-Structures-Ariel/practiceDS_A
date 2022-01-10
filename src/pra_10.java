@@ -60,7 +60,12 @@ public class pra_10 {
         //returnNode-> 2-> 46 -> 8 -> null
         return returnNode;
     }
-
+    //"Shay Gali"
+    //"Shir Segev"
+    //"Shay Zaltzman
+    //"Arik Na");
+    //"Maor Barzilay"
+    //"Aviel cohen"
     public static String longestWord(StringNode head) {
         if (head.next == null)
             return head.data;
@@ -77,6 +82,14 @@ public class pra_10 {
         if (temp % 10 < number % 10)
             return checkNumber(temp);
         return false;
+        //number =1234
+        //temp=123
+
+        //number =123
+        //temp=12
+
+        //number =12
+        //temp=1
     }
 
     public static void addInt(IntNode list, int key) {
